@@ -4,9 +4,11 @@ using System.Net;
 using System.Net.Http;
 using System.ServiceModel;
 using System.Threading.Tasks;
+using System.Xml;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Host;
+using Newtonsoft.Json;
 using TestSOAPServiceProxy.CustomerServiceReference;
 
 namespace GetCustomerDataFromSOAPTestFunction
@@ -29,7 +31,7 @@ namespace GetCustomerDataFromSOAPTestFunction
                 id = data?.name;
             }
 
-            var binding = new BasicHttpBinding(BasicHttpSecurityMode.None);
+            var binding = new BasicHttpBinding(BasicHttpSecurityMode.Transport);
             //binding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Basic;
             var endpoint = new EndpointAddress(Config.WcfServiceEndpoint);
 
@@ -38,12 +40,15 @@ namespace GetCustomerDataFromSOAPTestFunction
                 // If necessary, username and password should be provided.
                 //client.ClientCredentials.UserName.UserName = "username";
                 //client.ClientCredentials.UserName.Password = "password";
+                log.Info($"Calling WCF service.");
 
                 var result = await client.GetCustomerByIdAsync(int.Parse(id)).ConfigureAwait(false);
 
                 log.Info($"{result} received.");
 
-                return req.CreateResponse(HttpStatusCode.OK, result);
+                string output = JsonConvert.SerializeObject(result);
+
+                return req.CreateResponse(HttpStatusCode.OK, output, "application/json");
             }
 
         }
