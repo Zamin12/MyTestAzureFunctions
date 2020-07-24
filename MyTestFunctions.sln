@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30309.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSOAPWebService", "TestSOAPWebService\TestSOAPWebService.csproj", "{2A450DF4-5BB8-4CE8-AF2D-EF5474869F6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSOAPServiceProxy", "TestSOAPServiceProxy\TestSOAPServiceProxy.csproj", "{E6A8C5EC-13DF-41D0-AC54-91AB2F566869}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2A450DF4-5BB8-4CE8-AF2D-EF5474869F6A} = {2A450DF4-5BB8-4CE8-AF2D-EF5474869F6A}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetCustomerDataFromSOAPTestFunction", "GetCustomerDataFromSOAPTestFunction\GetCustomerDataFromSOAPTestFunction.csproj", "{FE8AC7E3-457C-43B0-A8A3-2D8880A86FE8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A450DF4-5BB8-4CE8-AF2D-EF5474869F6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A450DF4-5BB8-4CE8-AF2D-EF5474869F6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A450DF4-5BB8-4CE8-AF2D-EF5474869F6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A450DF4-5BB8-4CE8-AF2D-EF5474869F6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6A8C5EC-13DF-41D0-AC54-91AB2F566869}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6A8C5EC-13DF-41D0-AC54-91AB2F566869}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6A8C5EC-13DF-41D0-AC54-91AB2F566869}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6A8C5EC-13DF-41D0-AC54-91AB2F566869}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE8AC7E3-457C-43B0-A8A3-2D8880A86FE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE8AC7E3-457C-43B0-A8A3-2D8880A86FE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE8AC7E3-457C-43B0-A8A3-2D8880A86FE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE8AC7E3-457C-43B0-A8A3-2D8880A86FE8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1C56BA58-7115-4CC2-B352-A97BB09B8334}
+	EndGlobalSection
+EndGlobal
